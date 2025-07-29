@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Rotech Data Consult - Premier data analysis training, consulting services, and business intelligence solutions across Africa">
+  <title>Rotech Data Consult - Monitor. Analyze. Thrive.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-purple: #7B2CBF;
+      --light-purple: #9D4EDD;
+      --dark-purple: #5A189A;
+      --accent-purple: #C77DFF;
+      --white: #ffffff;
+      --light-gray: #f8f9fa;
+      --medium-gray: #6c757d;
+      --dark-gray: #212529;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: var(--dark-gray);
+      background-color: var(--light-gray);
+    }
+
+    /* Skip to main content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--dark-purple);
+      color: var(--white);
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-purple) 0%, var(--dark-purple) 100%);
+      color: var(--white);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      background: var(--white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-purple);
+      font-weight: bold;
+    }
+
+    .company-info h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Main content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      background-color: var(--white);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-purple) 0%, var(--light-purple) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary-purple);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Section headings */
+    h2 {
+      color: var(--primary-purple);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-purple);
+      border-radius: 2px;
+    }
+
+    h3 {
+      color: var(--dark-purple);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Grid layouts */
+    .grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Cards */
+    .card {
+      background: var(--white);
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(123, 44, 191, 0.15);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* YouTube Section */
+    .youtube-container {
+      background: var(--light-gray);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .video-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.02);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, var(--primary-purple), var(--light-purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 3rem;
+    }
+
+    .video-info {
+      padding: 1.5rem;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: linear-gradient(135deg, var(--light-gray), var(--white));
+      border-left: 5px solid var(--primary-purple);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: var(--primary-purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: bold;
+    }
+
+    .author-info strong {
+      color: var(--dark-purple);
+    }
+
+    /* Booking Section */
+    .booking-form {
+      background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+      color: var(--white);
+      border-radius: 12px;
+      padding: 3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-group textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: var(--white);
+      color: var(--primary-purple);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+      color: var(--white);
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Contact section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--light-gray);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: var(--primary-purple);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--primary-purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+    }
+
+    .contact-item:hover .contact-icon {
+      background: var(--white);
+      color: var(--primary-purple);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-purple);
+      transform: scale(1.2);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      section {
+        padding: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Loading animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <div class="header-content">
+      <div class="logo-container">
+        <div class="logo">R</div>
+        <div class="company-info">
+          <h1>Rotech Data Consult</h1>
+          <p class="tagline">Monitor. Analyze. Thrive.</p>
+        </div>
+      </div>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#staff">Team</a></li>
+          <li><a href="#blogs">Blog</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#booking">Book Session</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero fade-in" aria-labelledby="hero-heading">
+      <h2 id="hero-heading">Empowering Africa's Data Future</h2>
+      <p>Transform your career with expert-led data analysis training, cutting-edge consulting services, and business intelligence solutions that drive real results.</p>
+      <a href="#booking" class="cta-button">Start Your Journey Today</a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" aria-labelledby="stats-heading">
+      <h2 id="stats-heading">Our Impact</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Students Trained</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Companies Served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">95%</span>
+          <span class="stat-label">Success Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Countries Reached</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" aria-labelledby="courses-heading">
+      <h2 id="courses-heading">Featured Courses</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-table"></i>
+          </div>
+          <h3>Google Sheets Mastery</h3>
+          <p>From basic formulas to advanced pivot tables, master the art of spreadsheet analysis for business intelligence.</p>
+          <p><strong>Duration:</strong> 4 weeks | <strong>Level:</strong> Beginner-Intermediate</p>
+          <p><strong>Price:</strong> ₦25,000</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Power BI Dashboard Design</h3>
+          <p>Create stunning, interactive dashboards that tell compelling data stories and drive business decisions.</p>
+          <p><strong>Duration:</strong> 6 weeks | <strong>Level:</strong> Intermediate</p>
+          <p><strong>Price:</strong> ₦45,000</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>SQL for Data Analysis</h3>
+          <p>Master database querying, data manipulation, and advanced SQL techniques for real-world analysis.</p>
+          <p><strong>Duration:</strong> 5 weeks | <strong>Level:</strong> Intermediate</p>
+          <p><strong>Price:</strong> ₦35,000</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-python"></i>
+          </div>
+          <h3>Python for Data Science</h3>
+          <p>Learn Python programming with pandas, matplotlib, and scikit-learn for advanced data analysis.</p>
+          <p><strong>Duration:</strong> 8 weeks | <strong>Level:</strong> Advanced</p>
+          <p><strong>Price:</strong> ₦60,000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Consulting Services</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Data Strategy Consulting</h3>
+          <p>Comprehensive data strategy development, infrastructure planning, and governance frameworks.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Team Training Programs</h3>
+          <p>Custom workshops, bootcamps, and ongoing training programs for your data teams.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Business Intelligence Setup</h3>
+          <p>End-to-end BI implementation, dashboard development, and automated reporting systems.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Data Audit & Cleanup</h3>
+          <p>Comprehensive data quality assessment, cleaning, and optimization services.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Analytics Implementation</h3>
+          <p>Custom analytics solutions, KPI development, and performance monitoring systems.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <h3>Monitoring & Evaluation</h3>
+          <p>Comprehensive M&E frameworks, impact assessment, and data-driven program evaluation.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Certification Programs</h3>
+          <p>Industry-recognized certification programs in data analysis and business intelligence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" aria-labelledby="staff-heading">
+      <h2 id="staff-heading">Meet Our Expert Team</h2>
+      <div class="grid grid-3">
+        <div class="card" style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-purple), var(--light-purple)); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+            AJ
+          </div>
+          <h3>Adebayo Johnson</h3>
+          <p style="color: var(--primary-purple); font-weight: 600; margin-bottom: 1rem;">Founder & Lead Data Strategist</p>
+          <p>15+ years in data analytics, former Microsoft Power BI specialist. Expert in business intelligence and data transformation.</p>
+          <div style="margin-top: 1rem;">
+            <a href="#" style="color: var(--primary-purple); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: var(--primary-purple); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-purple), var(--light-purple)); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+            FO
+          </div>
+          <h3>Funmi Okafor</h3>
+          <p style="color: var(--primary-purple); font-weight: 600; margin-bottom: 1rem;">Senior Training Manager</p>
+          <p>Google Sheets certified trainer with 8+ years experience. Specializes in making complex concepts accessible to beginners.</p>
+          <div style="margin-top: 1rem;">
+            <a href="#" style="color: var(--primary-purple); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: var(--primary-purple); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-purple), var(--light-purple)); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+            KM
+          </div>
+          <h3>Kemi Martins</h3>
+          <p style="color: var(--primary-purple); font-weight: 600; margin-bottom: 1rem;">M&E Specialist</p>
+          <p>PhD in Statistics, 10+ years in monitoring & evaluation. Expert in impact assessment and program evaluation frameworks.</p>
+          <div style="margin-top: 1rem;">
+            <a href="#" style="color: var(--primary-purple); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: var(--primary-purple); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blogs" aria-labelledby="blogs-heading">
+      <h2 id="blogs-heading">Latest Insights</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <div style="width: 100%; height: 200px; background: linear-gradient(45deg, var(--primary-purple), var(--light-purple)); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div style="color: var(--medium-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-calendar"></i> January 15, 2025 | 
+            <i class="fas fa-user"></i> Adebayo Johnson
+          </div>
+          <h3>The Future of Data Analytics in Africa: Trends to Watch in 2025</h3>
+          <p>Explore emerging trends in African data analytics landscape, from AI adoption to local data sovereignty initiatives...</p>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none;">Read More →</a>
+        </article>
+        <article class="card">
+          <div style="width: 100%; height: 200px; background: linear-gradient(45deg, var(--primary-purple), var(--light-purple)); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div style="color: var(--medium-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-calendar"></i> January 10, 2025 | 
+            <i class="fas fa-user"></i> Funmi Okafor
+          </div>
+          <h3>10 Power BI Tips That Will Transform Your Dashboards</h3>
+          <p>Master these advanced Power BI techniques to create more engaging and insightful business intelligence reports...</p>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none;">Read More →</a>
+        </article>
+        <article class="card">
+          <div style="width: 100%; height: 200px; background: linear-gradient(45deg, var(--primary-purple), var(--light-purple)); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div style="color: var(--medium-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-calendar"></i> January 5, 2025 | 
+            <i class="fas fa-user"></i> Kemi Martins
+          </div>
+          <h3>Building Effective M&E Frameworks: A Data-Driven Approach</h3>
+          <p>Learn how to design monitoring and evaluation systems that deliver actionable insights for program improvement...</p>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none;">Read More →</a>
+        </article>
+        <article class="card">
+          <div style="width: 100%; height: 200px; background: linear-gradient(45deg, var(--primary-purple), var(--light-purple)); border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div style="color: var(--medium-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <i class="fas fa-calendar"></i> December 28, 2024 | 
+            <i class="fas fa-user"></i> Adebayo Johnson
+          </div>
+          <h3>From Excel to Data Scientist: Career Transition Guide</h3>
+          <p>A comprehensive roadmap for professionals looking to transition from traditional analysis to advanced data science roles...</p>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none;">Read More →</a>
+        </article>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#" class="cta-button">View All Articles</a>
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research & Publications</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>African Data Literacy Report 2024</h3>
+          <p>Comprehensive analysis of data skills gap across 15 African countries, with recommendations for education and policy.</p>
+          <div style="margin-top: 1rem;">
+            <span style="background: var(--accent-purple); color: var(--dark-purple); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Research Paper</span>
+            <a href="#" style="color: var(--primary-purple); margin-left: 1rem; font-weight: 600;">Download PDF</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>SME Data Adoption Study</h3>
+          <p>Research on data analytics adoption patterns among small and medium enterprises in West Africa.</p>
+          <div style="margin-top: 1rem;">
+            <span style="background: var(--accent-purple); color: var(--dark-purple); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Case Study</span>
+            <a href="#" style="color: var(--primary-purple); margin-left: 1rem; font-weight: 600;">Download PDF</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-globe-africa"></i>
+          </div>
+          <h3>Data Governance in Emerging Markets</h3>
+          <p>Best practices for implementing data governance frameworks in developing economies with limited resources.</p>
+          <div style="margin-top: 1rem;">
+            <span style="background: var(--accent-purple); color: var(--dark-purple); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">White Paper</span>
+            <a href="#" style="color: var(--primary-purple); margin-left: 1rem; font-weight: 600;">Download PDF</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Future of Remote Data Teams</h3>
+          <p>Analysis of productivity patterns and collaboration tools for distributed data science teams in Africa.</p>
+          <div style="margin-top: 1rem;">
+            <span style="background: var(--accent-purple); color: var(--dark-purple); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Survey Report</span>
+            <a href="#" style="color: var(--primary-purple); margin-left: 1rem; font-weight: 600;">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" aria-labelledby="careers-heading">
+      <h2 id="careers-heading">Join Our Team</h2>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p style="font-size: 1.2rem; color: var(--medium-gray);">
+          Be part of Africa's leading data consulting firm. We're always looking for passionate data professionals to join our mission.
+        </p>
+      </div>
+      
+      <div class="grid grid-2">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div>
+              <h3 style="margin-bottom: 0.5rem;">Senior Data Analyst</h3>
+              <p style="color: var(--primary-purple); font-weight: 600; margin: 0;">Lagos, Nigeria • Full-time</p>
+            </div>
+            <span style="background: var(--primary-purple); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">New</span>
+          </div>
+          <p>Lead data analysis projects for enterprise clients. 5+ years experience with SQL, Python, and Power BI required.</p>
+          <div style="margin-top: 1.5rem;">
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Python</span>
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">SQL</span>
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Power BI</span>
+          </div>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none; margin-top: 1rem; display: inline-block;">Apply Now →</a>
+        </div>
+        
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div>
+              <h3 style="margin-bottom: 0.5rem;">Training Coordinator</h3>
+              <p style="color: var(--primary-purple); font-weight: 600; margin: 0;">Remote • Part-time</p>
+            </div>
+          </div>
+          <p>Coordinate online training programs and student success initiatives. Experience in education technology preferred.</p>
+          <div style="margin-top: 1.5rem;">
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">EdTech</span>
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Project Management</span>
+          </div>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none; margin-top: 1rem; display: inline-block;">Apply Now →</a>
+        </div>
+        
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div>
+              <h3 style="margin-bottom: 0.5rem;">Business Intelligence Consultant</h3>
+              <p style="color: var(--primary-purple); font-weight: 600; margin: 0;">Lagos, Nigeria • Contract</p>
+            </div>
+          </div>
+          <p>Support enterprise BI implementations and dashboard development. Advanced Power BI and Tableau expertise required.</p>
+          <div style="margin-top: 1.5rem;">
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Power BI</span>
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Tableau</span>
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Consulting</span>
+          </div>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none; margin-top: 1rem; display: inline-block;">Apply Now →</a>
+        </div>
+        
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div>
+              <h3 style="margin-bottom: 0.5rem;">Content Creator (Data Education)</h3>
+              <p style="color: var(--primary-purple); font-weight: 600; margin: 0;">Remote • Freelance</p>
+            </div>
+          </div>
+          <p>Create engaging educational content for our blog, YouTube channel, and training materials. Data background required.</p>
+          <div style="margin-top: 1.5rem;">
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Content Writing</span>
+            <span style="background: var(--light-gray); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Video Production</span>
+          </div>
+          <a href="#" style="color: var(--primary-purple); font-weight: 600; text-decoration: none; margin-top: 1rem; display: inline-block;">Apply Now →</a>
+        </div>
+      </div>
+      
+      <div style="background: var(--light-gray); border-radius: 12px; padding: 2rem; margin-top: 3rem; text-align: center;">
+        <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Don't see the right fit?</h3>
+        <p style="margin-bottom: 2rem;">We're always interested in connecting with talented data professionals. Send us your resume and let us know how you'd like to contribute to our mission.</p>
+        <a href="mailto:careers@rotechconsult.com" class="cta-button">
+          <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+          Send Your Resume
+        </a>
+      </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" aria-labelledby="community-heading">
+      <h2 id="community-heading">Join Our Data Community</h2>
+      <div style="background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple)); color: white; border-radius: 12px; padding: 3rem; text-align: center; margin-bottom: 3rem;">
+        <h3 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Africa Data Professionals Network</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+          Connect with 2,500+ data professionals across Africa. Share insights, get career advice, and access exclusive resources.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="#" class="cta-button" style="background: white; color: var(--primary-purple);">
+            <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i>
+            Join WhatsApp Group
+          </a>
+          <a href="#" class="cta-button" style="background: rgba(255,255,255,0.1); color: white; border: 2px solid white;">
+            <i class="fab fa-telegram" style="margin-right: 0.5rem;"></i>
+            Telegram Channel
+          </a>
+        </div>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Networking Events</h3>
+          <p>Monthly virtual meetups, workshops, and networking sessions with industry leaders and peers.</p>
+          <strong style="color: var(--primary-purple);">Next Event: Feb 15, 2025</strong>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Job Board</h3>
+          <p>Exclusive access to data analyst and scientist positions from top companies across Africa.</p>
+          <strong style="color: var(--primary-purple);">50+ Active Openings</strong>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Learning Resources</h3>
+          <p>Free templates, cheat sheets, and study guides shared by community members and experts.</p>
+          <strong style="color: var(--primary-purple);">200+ Resources</strong>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3>Q&A Support</h3>
+          <p>Get help with technical challenges, career advice, and project feedback from experienced professionals.</p>
+          <strong style="color: var(--primary-purple);">24/7 Community Support</strong>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Skill Challenges</h3>
+          <p>Monthly data challenges and competitions to sharpen your skills and win exciting prizes.</p>
+          <strong style="color: var(--primary-purple);">Win Certificates & Prizes</strong>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="card-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Mentorship Program</h3>
+          <p>Connect with experienced mentors or become a mentor to help others in their data journey.</p>
+          <strong style="color: var(--primary-purple);">50+ Active Mentors</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- YouTube Videos Section -->
+    <section id="videos" aria-labelledby="videos-heading">
+      <h2 id="videos-heading">Learning Resources</h2>
+      <div class="youtube-container">
+        <p>Access our comprehensive library of free tutorials, tips, and industry insights on our YouTube channel.</p>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <div class="video-info">
+              <h3>Excel Power Query Tutorial</h3>
+              <p>Learn to automate data cleaning and transformation processes in Excel.</p>
+              <a href="#" class="cta-button" style="display: inline-block; margin-top: 1rem;">Watch Now</a>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <div class="video-info">
+              <h3>Power BI Best Practices</h3>
+              <p>Professional tips for creating impactful dashboards and reports.</p>
+              <a href="#" class="cta-button" style="display: inline-block; margin-top: 1rem;">Watch Now</a>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <div class="video-info">
+              <h3>Data Analysis Career Guide</h3>
+              <p>Complete roadmap to building a successful career in data analysis.</p>
+              <a href="#" class="cta-button" style="display: inline-block; margin-top: 1rem;">Watch Now</a>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 2rem;">
+          <a href="https://youtube.com/@rotechdataconsult" target="_blank" class="cta-button">
+            <i class="fab fa-youtube" style="margin-right: 0.5rem;"></i>
+            Subscribe to Our Channel
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading">What Our Students Say</h2>
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "Rotech's Power BI course completely transformed how I approach data visualization. Within 3 months of completing the program, I landed a Business Intelligence Analyst role with a 40% salary increase!"
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">AO</div>
+          <div class="author-info">
+            <strong>Adebayo Olamide</strong><br>
+            <span>BI Analyst, Dangote Group</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "The consulting services from Rotech helped our startup build a robust data infrastructure from scratch. Their strategic guidance was invaluable in scaling our analytics capabilities."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">EN</div>
+          <div class="author-info">
+            <strong>Emeka Nwosu</strong><br>
+            <span>CTO, TechNova Solutions</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "I went from knowing nothing about Excel to creating complex financial models. The instructors are patient, knowledgeable, and truly invested in your success."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">FA</div>
+          <div class="author-info">
+            <strong>Fatima Abdullahi</strong><br>
+            <span>Financial Analyst, First Bank</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" aria-labelledby="booking-heading">
+      <h2 id="booking-heading" style="color: white;">Book a Consultation</h2>
+      <div class="booking-form">
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">Ready to transform your business with data? Schedule a free consultation with our experts.</p>
+        <form>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company/Organization</label>
+              <input type="text" id="company" name="company">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interest *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="training">Individual Training</option>
+              <option value="consulting">Business Consulting</option>
+              <option value="team-training">Team Training</option>
+              <option value="bi-setup">BI Implementation</option>
+              <option value="data-audit">Data Audit</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us about your needs</label>
+            <textarea id="message" name="message" placeholder="Describe your current challenges and goals..."></textarea>
+          </div>
+          <div style="text-align: center;">
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-calendar-check" style="margin-right: 0.5rem;"></i>
+              Schedule Free Consultation
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <strong>Email</strong><br>
+            <a href="mailto:info@rotechconsult.com">info@rotechconsult.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div>
+            <strong>WhatsApp</strong><br>
+            <a href="https://wa.me/234xxxxxxxxx">+234-xxx-xxx-xxxx</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <strong>Location</strong><br>
+            Lagos, Nigeria
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div>
+            <strong>Business Hours</strong><br>
+            Mon-Fri: 9AM-6PM WAT
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <div class="logo-container" style="justify-content: center; margin-bottom: 2rem;">
+        <div class="logo">R</div>
+        <div class="company-info">
+          <h3 style="margin: 0; color: white;">Rotech Data Consult</h3>
+          <p class="tagline">Monitor. Analyze. Thrive.</p>
+        </div>
+      </div>
+      
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      
+      <p>&copy; 2025 Rotech Data Consult. All rights reserved.</p>
+      <p>Empowering Africa's data professionals with world-class training and consulting services.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple form handling
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      if (!data.name || !data.email || !data.phone || !data.service) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Simulate form submission
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Sending...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('Thank you! Your consultation request has been submitted. We\'ll contact you within 24 hours.');
+        this.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add loading animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Mobile menu toggle (if needed)
+    const header = document.querySelector('header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
+</body>
+</html>
